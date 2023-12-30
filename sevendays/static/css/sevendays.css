@@ -1,0 +1,21 @@
+body, html{
+    margin:0;
+    padding:0;
+}
+.block-heading{
+    font-size:39px;
+    margin-top: 30px;
+    
+}
+footer{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.block-image img{
+    width:500px;
+    height: 500px;
+}
+main,footer{
+    max-width:800px;
+    margin:0 auto;
+}

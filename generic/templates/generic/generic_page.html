@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+
+
+{% block body_class %}template-genericpage{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/sevendays.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<h1>hello genericpage </h1>
+   {% image page.banner_image fill-400x400 as img %}
+<img src="{{ img.url }}" alt="{{ img.alt }}" style="width:100%, height:auto">
+<p>
+{{page.banner_title}}
+</p>
+    
+<p>
+   {{page.introduction}}
+</p> {% image page.author.image fill-600x600 %}
+<hr>
+<p>
+  page created by {{ page.author.name }} from {{ page.author.company_name}}
+
+</p>
+{% if page.author.company_url %}
+   <a href="{{page.author.company_url}}">
+      view website
+   </a>
+{% endif %}
+<hr>
+{% include_block page.body %}
+  
+
+
+   {% endblock content %}
